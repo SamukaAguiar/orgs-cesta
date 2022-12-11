@@ -1,23 +1,22 @@
 import { StyleSheet, Image, View } from "react-native";
 
 import SText from "../../../Components/SText";
+import SButton from "../../../Components/SButton";
 
-import logo from '../../../../assets/logo.png';
-
-export default function Details() {
+export default function Details({ titleDetail, logoFarm, nameFarm, descriptionFarm, price, buttonBuy }) {
     return <>
-        <SText style={componetStyle.name}>Cesta de verduras</SText>
+        <SText style={componetStyle.name}>{titleDetail}</SText>
 
         <View style={componetStyle.farm}>
-            <Image source={logo} style={componetStyle.imageFarm}></Image>
-            <SText style={componetStyle.nameFarm}>Jenny Jack Farm</SText>
+            <Image source={logoFarm} style={componetStyle.imageFarm}></Image>
+            <SText style={componetStyle.nameFarm}>{nameFarm}</SText>
         </View>
 
-        <SText style={componetStyle.description}>
-            Uma cesta com produtos selecionados cuidadosamente
-            da fazenda direto para sua cozinha
-        </SText>
-        <SText style={componetStyle.price}>R$ 40,00</SText>
+        <SText style={componetStyle.description}>{descriptionFarm}</SText>
+        <SText style={componetStyle.price}>{price}</SText>
+
+        <SButton onPress={() => { }}>{buttonBuy}</SButton>
+
     </>
 }
 
@@ -25,7 +24,7 @@ const componetStyle = StyleSheet.create({
     name: {
         color: "#464646",
         fontSize: 26,
-        lineHeight: 42,   
+        lineHeight: 42,
         fontWeight: "bold",
     },
 
@@ -34,7 +33,7 @@ const componetStyle = StyleSheet.create({
         paddingVertical: 12,
     },
 
-    imageFarm:{
+    imageFarm: {
         width: 32,
         height: 32
     },
@@ -42,7 +41,7 @@ const componetStyle = StyleSheet.create({
     nameFarm: {
         fontSize: 16,
         lineHeight: 26,
-        marginLeft: 12,        
+        marginLeft: 12,
     },
 
     description: {
@@ -57,5 +56,8 @@ const componetStyle = StyleSheet.create({
         fontSize: 26,
         lineHeight: 42,
         marginTop: 8,
-    }
+    },
+    buttonBuy: {
+        backgroundColor: "white",
+    }        
 });

@@ -6,10 +6,10 @@ import topo from '../../../../assets/topo.png';
 
 const width = Dimensions.get('screen').width;
 
-export default function TopPage(){
+export default function TopPage({ titleTop }){
     return <>
         <Image source={topo} style={componetStyle.top}/>
-        <SText style={componetStyle.title}>Detalhes da Cesta</SText>
+        <SText style={componetStyle.title}>{ titleTop }</SText>
     </>
 }
 
